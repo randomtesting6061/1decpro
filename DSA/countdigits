@@ -1,0 +1,24 @@
+import math
+class Solution:
+    def countDigit(self, n):
+        n=str(n)
+        return len(n)
+
+
+
+
+
+
+        if n==0:
+            return 1
+        return int(math.log10(n))+1
+
+
+
+        c=0
+        if n==0:
+            return 1
+        while n>0:
+            n=n//10
+            c=c+1
+        return c
