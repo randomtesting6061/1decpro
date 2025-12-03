@@ -1,0 +1,10 @@
+class Solution:
+    def reverseNumber(self, n):
+        if n==0:
+            return 0
+        cn=0
+        while n>0:
+            reminder=n%10
+            n=n//10
+            cn=cn*10+reminder
+        return cn
