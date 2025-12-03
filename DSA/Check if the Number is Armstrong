@@ -1,0 +1,18 @@
+import math
+class Solution:
+    def isArmstrong(self, n):
+        su=0
+        t=n
+        count=0
+        if n==0:
+            count=1
+        else:
+            count=int(math.log10(n)+1)
+
+        while n>0:
+            re=n%10
+            n=n//10
+            su=su+re**count
+        if su==t:
+            return True
+        return False
