@@ -1,0 +1,9 @@
+class Solution:
+    def largestDigit(self, n):
+        l=0
+        while n>0:
+            re=n%10
+            n=n//10
+            if re>l:
+                l=re
+        return l
