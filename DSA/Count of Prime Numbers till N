@@ -1,0 +1,15 @@
+class Solution:
+    def primeUptoN(self, n):
+        c=0
+        mc=0
+        if n==1:
+            return False
+        for j in range(2,n+1):
+
+            for i in range(2,j):
+                if j%i==0:
+                    c=c+1
+            if c==0:
+                mc=mc+1
+            c=0
+        return mc
