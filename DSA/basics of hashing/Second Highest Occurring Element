@@ -1,0 +1,39 @@
+class Solution:
+    def secondMostFrequentElement(self, nums):
+         #NEED TO SOLVE WITH HASH MAPP
+        dict_max={}
+        second_max=0
+        for i in nums:
+            if i in dict_max:
+                dict_max[i]=dict_max[i]+1
+            else:
+                dict_max[i]=1
+
+        m1=0
+        m2=0
+        max_element=None
+        second_max=None
+        for j in dict_max:
+            if dict_max[j]>m1:
+                m2=m1
+                m1=dict_max[j]
+                second_max=max_element
+                max_element=j
+               
+              
+            elif dict_max[j]==m1:
+                max_element=min(max_element,j)
+            elif dict_max[j]>m2:
+                m2=dict_max[j]
+                second_max=j
+            elif dict_max[j]==m2:
+                second_max=min(second_max,j)
+        if second_max is not None:
+            return second_max
+        else:
+            return -1
+
+                
+
+        
+
