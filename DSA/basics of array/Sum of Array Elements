@@ -1,0 +1,9 @@
+class Solution:
+    def sum(self,arr, n): 
+        # return sum(arr)
+        sum_arr=0
+        for i in range(len(arr)):
+            sum_arr=arr[i]+sum_arr
+        return sum_arr
+
+    
