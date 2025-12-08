@@ -1,0 +1,24 @@
+class Solution:
+    def mostFrequentElement(self, nums):
+        #NEED TO SOLVE WITH HASH MAPP
+        dict_max={}
+        for i in nums:
+            if i in dict_max:
+                dict_max[i]=dict_max[i]+1
+            else:
+                dict_max[i]=1
+        max_count_key=None
+        count=0
+        for j in dict_max:
+            if dict_max[j]>count:
+                
+                max_count_key=j
+                count=dict_max[j]
+            elif dict_max[j] == count:
+                max_count_key = min(max_count_key, j)
+        return max_count_key
+           
+
+        
+        
+     
