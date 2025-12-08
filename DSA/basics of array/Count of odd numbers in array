@@ -1,0 +1,8 @@
+class Solution:
+    def countOdd(self, arr, n):
+        # Your code goes here
+        c=0
+        for i in range(len(arr)):
+            if arr[i]%2==1:
+                c=c+1
+        return c
