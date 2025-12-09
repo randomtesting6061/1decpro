@@ -1,0 +1,9 @@
+class Solution:    
+    def palindromeCheck(self, s):
+        #your code goes here
+        k=len(s)
+        Flage=True
+        for i in range(len(s)//2):
+            if s[i]!=s[k-i-1]:
+                return False
+        return Flage
