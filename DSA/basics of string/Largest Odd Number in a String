@@ -1,0 +1,45 @@
+class Solution:  
+    def largeOddNum(self, s: str) -> str:
+        #your code goes here
+        inde=-1
+        for i in range(len(s)):
+            if int(s[i])%2==1:
+                inde=i
+        if inde==-1:
+                return ""
+        left=0
+        while left<=inde and s[left]=='0':
+            left=left+1
+        return s[left:inde+1]
+
+
+
+
+
+
+
+
+
+
+
+
+        # wrong solution----------------------------------------below
+        # l=0
+        # r=1
+        # max_odd_left_index=0
+        # max_odd_right_index=0
+        # while r!=len(s):
+        #     if int(s[l])%2==1:
+        #         max_odd_left_index=l
+        #         if int(s[r])%2==1:
+        #             max_odd_right_index=r
+        #             r=r+1
+        #         else:
+        #             r=r+1
+        #     elif int(s[l])%2!=1:
+        #         l=l+1
+        #         r=r+1
+        # if int(s[-1])%2==1:
+        #     return s[max_odd_left_index:-1]
+        # return s[max_odd_left_index:max_odd_right_index+1]
+
