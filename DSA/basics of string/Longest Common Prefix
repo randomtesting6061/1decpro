@@ -1,0 +1,65 @@
+class Solution:
+    def longestCommonPrefix(self, st):
+        #your code goes here
+        small=201
+        if len(st)==1:
+            return st[0]
+        up_small=st[0]
+        for sm in st:
+            if len(sm)<small:
+                small=len(sm)
+                up_small=sm
+        prev_common = up_small # Initialize prev_common to up_small
+        for i in st:
+            c=0
+            comm_str=""
+            for j in i:
+                
+                if c<=len(up_small)-1:
+                    
+                    if j==up_small[c]:
+                
+                        comm_str=comm_str+j
+                        c=c+1
+                    elif j!=up_small[c]:
+                        break
+            if comm_str == "": # If comm_str is empty, no common prefix
+                return ""
+            up_small = comm_str # Update up_small
+
+        return up_small # Return the common prefix
+
+
+# class Solution:  
+#     def longestCommonPrefix(self, st):
+#         #your code goes here
+#         small=201
+#         if len(st)==1:
+#             return st[0]
+#         up_small=st[0]
+#         for sm in st:
+#             if len(sm)<small:
+#                 small=len(sm)
+#                 up_small=sm
+#         prev_common=up_small
+#         for i in st:
+#             c=0
+#             comm_str=""
+#             for j in i:
+                
+#                 if c<=len(up_small)-1:
+                    
+#                     if j==up_small[c]:
+                
+#                         comm_str=comm_str+j
+#                         c=c+1
+#                     elif j!=up_small[c]:
+#                         if prev_common==comm_str:
+#                             prev_common=comm_str
+#                             break
+#                         else:
+#                             break
+#                         break
+#         return prev_common
+                
+
